@@ -133,11 +133,11 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 0;
+    padding: 20px 0;
 }
 
 .logo img {
-    height: 50px;
+    height: 80px;
     width: auto;
 }
 
@@ -574,7 +574,7 @@ a {
 }
 
 .footer-logo img {
-    height: 50px;
+    height: 70px;
     margin-bottom: 20px;
 }
 
@@ -645,7 +645,7 @@ a {
     .nav-menu {
         position: fixed;
         left: -100%;
-        top: 80px;
+        top: 100px;
         flex-direction: column;
         background: var(--white);
         width: 100%;
