@@ -85,19 +85,60 @@ contactForm.addEventListener('submit', (e) => {
     // Get form values
     const name = document.getElementById('name').value;
     const email = document.getElementById('email').value;
-    const subject = document.getElementById('subject').value;
+    const subject = document.getElementById('subject') ? document.getElementById('subject').value : '';
     const message = document.getElementById('message').value;
     
     // Simple validation
-    if (name && email && subject && message) {
+    if (name && email && message) {
         // Show success message
-        alert(`Thank you, ${name}! Your message has been received. We'll get back to you at ${email} as soon as possible.`);
-        
-        // Reset form
-        contactForm.reset();
+        const successDiv = document.getElementById('formSuccess');
+        if (successDiv) {
+            successDiv.classList.add('show');
+            contactForm.style.display = 'none';
+            
+            setTimeout(() => {
+                successDiv.classList.remove('show');
+                contactForm.style.display = 'block';
+                contactForm.reset();
+            }, 5000);
+        } else {
+            alert(`Mulțumim, ${name}! Mesajul tău a fost trimis. Te vom contacta la ${email} cât mai curând posibil.`);
+            contactForm.reset();
+        }
     } else {
-        alert('Please fill in all fields.');
+        alert('Te rugăm să completezi toate câmpurile obligatorii.');
     }
+});
+
+// Gallery Filter (for gallery.html)
+const filterButtons = document.querySelectorAll('.filter-btn');
+const galleryItems = document.querySelectorAll('.gallery-item-full');
+
+filterButtons.forEach(button => {
+    button.addEventListener('click', function() {
+        // Remove active class from all buttons
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        // Add active to clicked button
+        this.classList.add('active');
+        
+        const filterValue = this.getAttribute('data-filter');
+        
+        galleryItems.forEach(item => {
+            if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                item.style.display = 'block';
+                setTimeout(() => {
+                    item.style.opacity = '1';
+                    item.style.transform = 'scale(1)';
+                }, 10);
+            } else {
+                item.style.opacity = '0';
+                item.style.transform = 'scale(0.8)';
+                setTimeout(() => {
+                    item.style.display = 'none';
+                }, 300);
+            }
+        });
+    });
 });
 
 // Intersection Observer for fade-in animations
