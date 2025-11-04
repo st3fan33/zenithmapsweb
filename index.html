@@ -151,10 +151,20 @@
                 </div>
                 <div class="about-image">
                     <div class="image-placeholder">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
-                            <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
-                            <polyline points="2 17 12 22 22 17"></polyline>
-                            <polyline points="2 12 12 17 22 12"></polyline>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" class="about-svg">
+                            <!-- Layered mountains -->
+                            <path d="M0 250 L100 150 L200 200 L300 100 L400 180 L400 400 L0 400 Z" fill="rgba(255,255,255,0.3)"/>
+                            <path d="M0 280 L80 200 L160 240 L240 180 L320 220 L400 200 L400 400 L0 400 Z" fill="rgba(255,255,255,0.2)"/>
+                            <path d="M0 320 L100 260 L200 300 L300 260 L400 300 L400 400 L0 400 Z" fill="rgba(255,255,255,0.15)"/>
+                            <!-- Sun -->
+                            <circle cx="320" cy="80" r="40" fill="rgba(255,255,255,0.4)"/>
+                            <!-- Birds -->
+                            <path d="M100 60 Q110 55 120 60 M110 58 Q110 52 110 58" stroke="rgba(255,255,255,0.6)" stroke-width="2" fill="none"/>
+                            <path d="M140 80 Q150 75 160 80 M150 78 Q150 72 150 78" stroke="rgba(255,255,255,0.6)" stroke-width="2" fill="none"/>
+                            <!-- Compass -->
+                            <circle cx="200" cy="150" r="30" stroke="rgba(255,255,255,0.5)" stroke-width="3" fill="none"/>
+                            <path d="M200 120 L200 180 M170 150 L230 150" stroke="rgba(255,255,255,0.5)" stroke-width="2"/>
+                            <path d="M200 130 L210 150 L200 140 L190 150 Z" fill="rgba(255,255,255,0.6)"/>
                         </svg>
                     </div>
                 </div>
@@ -171,34 +181,143 @@
             </div>
             <div class="gallery-grid">
                 <div class="gallery-item">
-                    <div class="gallery-placeholder">
+                    <div class="gallery-placeholder mountain-peak">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" class="gallery-icon">
+                            <path d="M100 40 L140 100 L120 100 L150 140 L50 140 L80 100 L60 100 Z" fill="white" opacity="0.9"/>
+                        </svg>
                         <span>Mountain Peak Trail</span>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <div class="gallery-placeholder">
+                    <div class="gallery-placeholder coastal">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" class="gallery-icon">
+                            <path d="M20 120 Q50 100 80 120 T140 120 T180 120 L180 160 L20 160 Z" fill="white" opacity="0.9"/>
+                            <circle cx="160" cy="60" r="15" fill="white" opacity="0.8"/>
+                        </svg>
                         <span>Coastal Hiking Routes</span>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <div class="gallery-placeholder">
+                    <div class="gallery-placeholder alpine">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" class="gallery-icon">
+                            <path d="M40 140 L80 80 L100 100 L140 60 L180 120 L180 140 Z" fill="white" opacity="0.9"/>
+                        </svg>
                         <span>Alpine Wilderness</span>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <div class="gallery-placeholder">
+                    <div class="gallery-placeholder desert">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" class="gallery-icon">
+                            <circle cx="100" cy="60" r="20" fill="white" opacity="0.9"/>
+                            <path d="M20 140 Q60 120 100 140 T180 140" stroke="white" stroke-width="3" fill="none" opacity="0.8"/>
+                        </svg>
                         <span>Desert Expedition</span>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <div class="gallery-placeholder">
+                    <div class="gallery-placeholder forest">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" class="gallery-icon">
+                            <path d="M70 60 L60 90 L50 90 L60 110 L50 110 L70 140 L90 140 L80 110 L90 110 L80 90 L90 90 Z" fill="white" opacity="0.9"/>
+                            <path d="M120 70 L110 95 L100 95 L110 115 L100 115 L120 145 L140 145 L130 115 L140 115 L130 95 L140 95 Z" fill="white" opacity="0.9"/>
+                        </svg>
                         <span>Forest Trail Network</span>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <div class="gallery-placeholder">
+                    <div class="gallery-placeholder canyon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" class="gallery-icon">
+                            <path d="M60 50 L60 150 M80 50 L80 150 M120 50 L120 150 M140 50 L140 150" stroke="white" stroke-width="3" opacity="0.8"/>
+                            <rect x="50" y="140" width="100" height="20" fill="white" opacity="0.9"/>
+                        </svg>
                         <span>Canyon Exploration</span>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">What Adventurers Say</h2>
+                <p class="section-subtitle">Trusted by thousands of outdoor enthusiasts</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"ZenithMaps saved our expedition! The level of detail and accuracy is unmatched. We navigated through challenging terrain with complete confidence."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">JD</div>
+                        <div>
+                            <h4>John Denver</h4>
+                            <p>Mountain Climber</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"The custom maps they created for our hiking group were perfect. Beautiful design and incredibly detailed. Highly recommend!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">SM</div>
+                        <div>
+                            <h4>Sarah Martinez</h4>
+                            <p>Hiking Guide</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"Professional service from start to finish. The digital maps work perfectly with our GPS units. Game changer for our outdoor education program."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">RK</div>
+                        <div>
+                            <h4>Robert Kim</h4>
+                            <p>Outdoor Educator</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-number">01</div>
+                    <h3>Precision Mapping</h3>
+                    <p>Accurate topographic data with GPS-verified waypoints and coordinates</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-number">02</div>
+                    <h3>Weather Resistant</h3>
+                    <p>Printed on durable, waterproof material for all weather conditions</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-number">03</div>
+                    <h3>Regular Updates</h3>
+                    <p>Maps updated quarterly with new trails and terrain changes</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-number">04</div>
+                    <h3>Expert Cartography</h3>
+                    <p>Created by experienced cartographers and outdoor professionals</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Start Your Next Adventure?</h2>
+                <p>Get your custom map today and explore with confidence</p>
+                <div class="cta-buttons">
+                    <a href="#contact" class="btn btn-primary btn-large">Get Your Map</a>
+                    <a href="#services" class="btn btn-secondary btn-large">View All Services</a>
                 </div>
             </div>
         </div>
@@ -309,5 +428,12 @@
     </footer>
 
     <script src="script.js"></script>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
+    </button>
 </body>
 </html>

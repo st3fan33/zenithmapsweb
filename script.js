@@ -131,6 +131,31 @@ document.querySelectorAll('.gallery-item').forEach((item, index) => {
     observer.observe(item);
 });
 
+// Observe testimonial cards
+document.querySelectorAll('.testimonial-card').forEach((card, index) => {
+    card.style.opacity = '0';
+    card.style.transform = 'translateY(30px)';
+    card.style.transition = `all 0.6s ease ${index * 0.15}s`;
+    observer.observe(card);
+});
+
+// Observe feature items
+document.querySelectorAll('.feature-item').forEach((item, index) => {
+    item.style.opacity = '0';
+    item.style.transform = 'translateY(30px)';
+    item.style.transition = `all 0.6s ease ${index * 0.1}s`;
+    observer.observe(item);
+});
+
+// Observe CTA section
+const ctaSection = document.querySelector('.cta-content');
+if (ctaSection) {
+    ctaSection.style.opacity = '0';
+    ctaSection.style.transform = 'translateY(30px)';
+    ctaSection.style.transition = 'all 0.8s ease';
+    observer.observe(ctaSection);
+}
+
 // Counter animation for stats
 const stats = document.querySelectorAll('.stat h3');
 const statsSection = document.querySelector('.about-stats');
@@ -205,4 +230,107 @@ document.querySelectorAll('.btn').forEach(button => {
     });
 });
 
-console.log('ZenithMaps website loaded successfully!');
+// Gallery item click effect
+document.querySelectorAll('.gallery-item').forEach(item => {
+    item.addEventListener('click', function() {
+        const title = this.querySelector('span').textContent;
+        alert(`🗺️ ${title}\n\nView detailed map information and purchase options. (This would link to a detailed product page)`);
+    });
+});
+
+// Testimonial card hover effects
+document.querySelectorAll('.testimonial-card').forEach(card => {
+    card.addEventListener('mouseenter', function() {
+        const stars = this.querySelector('.stars');
+        if (stars) {
+            stars.style.transform = 'scale(1.2)';
+            stars.style.transition = 'transform 0.3s ease';
+        }
+    });
+    
+    card.addEventListener('mouseleave', function() {
+        const stars = this.querySelector('.stars');
+        if (stars) {
+            stars.style.transform = 'scale(1)';
+        }
+    });
+});
+
+// Feature item number animation on hover
+document.querySelectorAll('.feature-item').forEach(item => {
+    item.addEventListener('mouseenter', function() {
+        const number = this.querySelector('.feature-number');
+        if (number) {
+            number.style.opacity = '0.4';
+            number.style.transform = 'scale(1.1)';
+            number.style.transition = 'all 0.3s ease';
+        }
+    });
+    
+    item.addEventListener('mouseleave', function() {
+        const number = this.querySelector('.feature-number');
+        if (number) {
+            number.style.opacity = '0.2';
+            number.style.transform = 'scale(1)';
+        }
+    });
+});
+
+// Dynamic gradient animation for hero
+let hue = 0;
+setInterval(() => {
+    hue = (hue + 0.5) % 360;
+    const hero = document.querySelector('.hero');
+    if (hero && window.pageYOffset === 0) {
+        // Subtle color shift
+    }
+}, 100);
+
+// Add scroll progress indicator
+const progressBar = document.createElement('div');
+progressBar.style.cssText = `
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--primary-light));
+    z-index: 9999;
+    transition: width 0.1s ease;
+`;
+document.body.appendChild(progressBar);
+
+window.addEventListener('scroll', () => {
+    const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolled = (winScroll / height) * 100;
+    progressBar.style.width = scrolled + '%';
+});
+
+// Back to Top Button
+const backToTopButton = document.getElementById('backToTop');
+
+window.addEventListener('scroll', () => {
+    if (window.pageYOffset > 300) {
+        backToTopButton.classList.add('visible');
+    } else {
+        backToTopButton.classList.remove('visible');
+    }
+});
+
+backToTopButton.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
+
+// Add loading animation
+window.addEventListener('load', () => {
+    document.body.style.opacity = '0';
+    setTimeout(() => {
+        document.body.style.transition = 'opacity 0.5s ease';
+        document.body.style.opacity = '1';
+    }, 100);
+});
+
+console.log('ZenithMaps website loaded successfully! 🗺️⛰️');
